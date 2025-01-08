@@ -164,7 +164,7 @@
                   <div class="swiper-slide" *ngFor="let categoria of (realtimecategorias.categorias$ | async)">
                     <div class="shop-box style-1 wow fadeInUp" data-wow-delay="0.2s">
                       <div class="dz-media">
-                        <img src="assets/images/shop/product/clothes/1.png" alt="image">
+                        <img src="{{categoria.images[0]}}" alt="image">
                       </div>
                       <h6 class="product-name"><a (click)="global.setRoute('/categoria/'+categoria.id)">{{categoria.name}}</a></h6>
                     </div>

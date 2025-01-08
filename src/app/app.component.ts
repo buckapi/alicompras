@@ -6,6 +6,9 @@ import { GlobalService } from './services/global.service';
 import { FooterComponent } from "./componentes/ui/footer/footer.component";
 import { HeadComponent } from './componentes/ui/head/head.component';
 import { DetailProductComponent } from './componentes/detail-product/detail-product.component';
+import { ShopComponent } from './componentes/shop/shop.component';
+import { ContactComponent } from './componentes/contact/contact.component';
+import { AboutComponent } from './componentes/about/about.component';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +17,10 @@ import { DetailProductComponent } from './componentes/detail-product/detail-prod
     HomeComponent, 
     FooterComponent,
     HeadComponent,
-    DetailProductComponent
+    DetailProductComponent,
+    ShopComponent,
+    ContactComponent,
+    AboutComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
