@@ -1,18 +1,18 @@
 :root{
 	
 	/* Primary */
-	--primary: #CC0D39;
-	--primary-hover: #ad0b30;
-	--primary-dark: #ad0b30;
+	--primary: #fa8a0b;
+	--primary-hover: #fa8a0b;
+	--primary-dark: #fa8a0b;
 	
-	--secondary: #000;
-	--secondary-hover: #000;
+	--secondary: #002446;
+	--secondary-hover: #002446;
 	--secondary-light: #A7BFFE;
-	--title: #000;
+	--title: #002446;
 	--bg-light: #FFFAF3;
 	--light-dark: #FEEB9D;
-	--theme-text-color: #000000;
-	--dark: #151F37;
+	--theme-text-color: #002446;
+	--dark: #002446;
     --dark-light: #F9F9F9;
 	
 	/* Primary RGBA */
