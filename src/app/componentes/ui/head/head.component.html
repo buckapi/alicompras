@@ -22,10 +22,10 @@
               <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
             </div>
             <ul class="nav navbar-nav">
-              <li class="has-mega-menu sub-menu-down auto-width menu-left"><a>Inicio</a> </li>
-              <li class="has-mega-menu sub-menu-down auto-width menu-left"><a>Nosotros</a></li>
-              <li class="has-mega-menu sub-menu-down auto-width menu-left"><a>Productos</a></li>
-              <li class="has-mega-menu sub-menu-down auto-width menu-left"><a>Contacto</a></li>
+              <li class="has-mega-menu sub-menu-down auto-width menu-left" (click)="global.setRoute('home')" style="cursor: pointer;"><a>Inicio</a> </li>
+              <li class="has-mega-menu sub-menu-down auto-width menu-left" (click)="global.setRoute('about')" style="cursor: pointer;"><a>Nosotros</a></li>
+              <li class="has-mega-menu sub-menu-down auto-width menu-left" (click)="global.setRoute('detail-product')" style="cursor: pointer;"><a>Productos</a></li>
+              <li class="has-mega-menu sub-menu-down auto-width menu-left" (click)="global.setRoute('contact')" style="cursor: pointer;"><a>Contacto</a></li>
               <!-- <li class="sub-menu-down">
                 <a href="javascript:void(0);"><span>My Account</span> <i class="fas fa-chevron-down tabindex"></i></a>
                 <ul class="sub-menu">						
@@ -64,7 +64,7 @@
               <ul class="header-right">
                 <li class="nav-item login-link">
                   <a class="nav-link" href="login.html">
-                    Login / Register
+                    Ingresas / Registrate
                   </a>
                 </li>
                 <li class="nav-item search-link">
@@ -72,25 +72,25 @@
                     <i class="iconly-Light-Search"></i>
                   </a>
                 </li>
-                <li class="nav-item wishlist-link">
+                <!-- <li class="nav-item wishlist-link">
                   <a class="nav-link" href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <i class="iconly-Light-Heart2"></i>
                   </a>
-                </li>
+                </li> -->
                 <li class="nav-item cart-link">
                   <a href="javascript:void(0);" class="nav-link cart-btn"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <i class="iconly-Broken-Buy"></i>
                     <span class="badge badge-circle">5</span>
                   </a>
                 </li>
-                <li class="nav-item filte-link">
+                <!-- <li class="nav-item filte-link">
                   <a href="javascript:void(0);" class="nav-link filte-btn"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 13" fill="none">
                       <rect y="11" width="30" height="2" fill="black"/>
                       <rect width="30" height="2" fill="black"/>
                     </svg>
                   </a>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>

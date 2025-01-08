@@ -5,6 +5,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { GlobalService } from './services/global.service';
 import { FooterComponent } from "./componentes/ui/footer/footer.component";
 import { HeadComponent } from './componentes/ui/head/head.component';
+import { DetailProductComponent } from './componentes/detail-product/detail-product.component';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ import { HeadComponent } from './componentes/ui/head/head.component';
     CommonModule,
     HomeComponent, 
     FooterComponent,
-    HeadComponent
+    HeadComponent,
+    DetailProductComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

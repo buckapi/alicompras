@@ -5,9 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class GlobalService {
   activeRoute = 'home';
-
+  categorias: any[] = [];
   constructor() { }
   setRoute(route: string) {
     this.activeRoute = route;
+  }
+  getCategorias(): any[] {
+    return this.categorias;
   }
 }
