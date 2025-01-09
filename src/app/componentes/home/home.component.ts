@@ -6,6 +6,7 @@ import { RealtimeProductosService } from '../../services/realtime-productos.serv
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
