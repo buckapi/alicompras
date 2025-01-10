@@ -271,7 +271,7 @@
                 <div class="dz-media h-100">	
                   <img src="assets/images/women.png" alt="">
                 </div>	
-                <a href="shop-list.html" class="btn btn-outline-secondary btn-light btn-xl">Woman collection</a>	
+                <a (click)="global.setRoute('detail-product')" class="btn btn-outline-secondary btn-light btn-xl">Woman collection</a>	
               </div>
             </div>
             <div class="col-lg-6 col-md-12 align-self-center">
@@ -295,7 +295,7 @@
                         <img src="assets/images/shop/product/medium/1.png" alt="image">
                       </div>
                       <div class="dz-content">
-                        <a href="shop-list.html" class="btn btn-outline-secondary btn-light btn-md">Child Fashion</a>
+                        <a (click)="global.setRoute('detail-product')" class="btn btn-outline-secondary btn-light btn-md">Child Fashion</a>
                       </div>
                     </div>
                   </div>
@@ -305,7 +305,7 @@
                         <img src="assets/images/shop/product/medium/2.png" alt="image">
                       </div>
                       <div class="dz-content">
-                        <a href="shop-list.html" class="btn btn-outline-secondary btn-light btn-md">Man collection</a>
+                        <a (click)="global.setRoute('detail-product')" class="btn btn-outline-secondary btn-light btn-md">Man collection</a>
                       </div>
                       <span class="sale-badge">50%<br>Sale <img src="assets/images/star.png" alt=""></span>
                     </div>
@@ -414,32 +414,20 @@
             <div class="col-lg-6 col-md-12">
               <div class="section-head style-1 m-b30  wow fadeInUp" data-wow-delay="0.2s">
                 <div class="left-content">
-                  <h2 class="title">Most popular products</h2>
+                  <h2 class="title">Productos recientes</h2>
                 </div>
               </div>	
             </div>
             <div class="col-lg-6 col-md-12">
               <div class="site-filters clearfix style-1 align-items-center wow fadeInUp ms-lg-auto" data-wow-delay="0.4s">
-                <ul class="filters" data-bs-toggle="buttons">
+                <ul class="filters" data-bs-toggle="buttons" *ngFor="let categoria of (realtimecategorias.categorias$ | async)">
                   <li class="btn active">
                     <input type="radio">
-                    <a href="javascript:void(0);">ALL</a> 
+                    <a href="javascript:void(0);">{{categoria.all}}</a> 
                   </li>
                   <li data-filter=".Dresses" class="btn">
                     <input type="radio">
-                    <a href="javascript:void(0);">Dresses</a> 
-                  </li>
-                  <li data-filter=".Tops" class="btn">
-                    <input type="radio">
-                    <a href="javascript:void(0);">Tops</a> 
-                  </li>
-                  <li data-filter=".Outerwear" class="btn">
-                    <input type="radio">
-                    <a href="javascript:void(0);">Outerwear</a> 
-                  </li>
-                  <li data-filter=".Jacket" class="btn">
-                    <input type="radio">
-                    <a href="javascript:void(0);">Jacket</a> 
+                    <a href="javascript:void(0);">{{categoria.name}}</a> 
                   </li>
                 </ul>			
               </div>
@@ -450,16 +438,16 @@
               <li class="card-container col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 Tops wow fadeInUp" data-wow-delay="0.6s">
                 <div class="shop-card">
                   <div class="dz-media">
-                    <img src="assets/images/shop/product/1.png" alt="image">
+                    <img src="assets/images/shop/product/1.png" alt="image" (click)="global.setRoute('detail-product')">
                     <div class="shop-meta">
                       <a href="javascript:void(0);" class="btn btn-secondary btn-md btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-eye d-md-none d-block"></i>
-                        <span class="d-md-block d-none">Quick View</span>
+                        <span class="d-md-block d-none">Ver detalles</span>
                       </a>
-                      <div class="btn btn-primary meta-icon dz-wishicon">
+                      <!-- <div class="btn btn-primary meta-icon dz-wishicon">
                         <i class="icon feather icon-heart dz-heart"></i>
                         <i class="icon feather icon-heart-on dz-heart-fill"></i>
-                      </div>
+                      </div> -->
                       <div class="btn btn-primary meta-icon dz-carticon">
                         <i class="flaticon flaticon-basket"></i>
                         <i class="flaticon flaticon-basket-on dz-heart-fill"></i>
@@ -467,7 +455,7 @@
                     </div>							
                   </div>
                   <div class="dz-content">
-                    <h5 class="title"><a href="shop-list.html">Cozy Knit Cardigan Sweater</a></h5>
+                    <h5 class="title"><a (click)="global.setRoute('detail-product')">Cozy Knit Cardigan Sweater</a></h5>
                     <h5 class="price">$80</h5>
                   </div>
                   <div class="product-tag">
@@ -482,12 +470,12 @@
                     <div class="shop-meta">
                       <a href="javascript:void(0);" class="btn btn-secondary btn-md btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-eye d-md-none d-block"></i>
-                        <span class="d-md-block d-none">Quick View</span>
+                        <span class="d-md-block d-none">Ver detalles</span>
                       </a>
-                      <div class="btn btn-primary meta-icon dz-wishicon">
+                      <!-- <div class="btn btn-primary meta-icon dz-wishicon">
                         <i class="icon feather icon-heart dz-heart"></i>
                         <i class="icon feather icon-heart-on dz-heart-fill"></i>
-                      </div>
+                      </div> -->
                       <div class="btn btn-primary meta-icon dz-carticon">
                         <i class="flaticon flaticon-basket"></i>
                         <i class="flaticon flaticon-basket-on dz-heart-fill"></i>
@@ -495,7 +483,7 @@
                     </div>								
                   </div>
                   <div class="dz-content">
-                    <h5 class="title"><a href="shop-list.html">Sophisticated Swagger Suit</a></h5>
+                    <h5 class="title"><a (click)="global.setRoute('detail-product')">Sophisticated Swagger Suit</a></h5>
                     <h5 class="price">$80</h5>
                   </div>
                   <div class="product-tag">
@@ -510,12 +498,12 @@
                     <div class="shop-meta">
                       <a href="javascript:void(0);" class="btn btn-secondary btn-md btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-eye d-md-none d-block"></i>
-                        <span class="d-md-block d-none">Quick View</span>
+                        <span class="d-md-block d-none">Ver detalles</span>
                       </a>
-                      <div class="btn btn-primary meta-icon dz-wishicon">
+                      <!-- <div class="btn btn-primary meta-icon dz-wishicon">
                         <i class="icon feather icon-heart dz-heart"></i>
                         <i class="icon feather icon-heart-on dz-heart-fill"></i>
-                      </div>
+                      </div> -->
                       <div class="btn btn-primary meta-icon dz-carticon">
                         <i class="flaticon flaticon-basket"></i>
                         <i class="flaticon flaticon-basket-on dz-heart-fill"></i>
@@ -523,7 +511,7 @@
                     </div>									
                   </div>
                   <div class="dz-content">
-                    <h5 class="title"><a href="shop-list.html">Classic Denim Skinny Jeans</a></h5>
+                    <h5 class="title"><a (click)="global.setRoute('detail-product')">Classic Denim Skinny Jeans</a></h5>
                     <h5 class="price">$80</h5>
                   </div>
                   <div class="product-tag">
@@ -538,12 +526,12 @@
                     <div class="shop-meta">
                       <a href="javascript:void(0);" class="btn btn-secondary btn-md btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-eye d-md-none d-block"></i>
-                        <span class="d-md-block d-none">Quick View</span>
+                        <span class="d-md-block d-none">Ver detalles</span>
                       </a>
-                      <div class="btn btn-primary meta-icon dz-wishicon">
+                      <!-- <div class="btn btn-primary meta-icon dz-wishicon">
                         <i class="icon feather icon-heart dz-heart"></i>
                         <i class="icon feather icon-heart-on dz-heart-fill"></i>
-                      </div>
+                      </div> -->
                       <div class="btn btn-primary meta-icon dz-carticon">
                         <i class="flaticon flaticon-basket"></i>
                         <i class="flaticon flaticon-basket-on dz-heart-fill"></i>
@@ -551,7 +539,7 @@
                     </div>									
                   </div>
                   <div class="dz-content">
-                    <h5 class="title"><a href="shop-list.html">Athletic Mesh Sports Leggings</a></h5>
+                    <h5 class="title"><a (click)="global.setRoute('detail-product')">Athletic Mesh Sports Leggings</a></h5>
                     <h5 class="price">$80</h5>
                   </div>
                   <div class="product-tag">
@@ -566,12 +554,12 @@
                     <div class="shop-meta">
                       <a href="javascript:void(0);" class="btn btn-secondary btn-md btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-eye d-md-none d-block"></i>
-                        <span class="d-md-block d-none">Quick View</span>
+                        <span class="d-md-block d-none">Ver detalles</span>
                       </a>
-                      <div class="btn btn-primary meta-icon dz-wishicon">
+                      <!-- <div class="btn btn-primary meta-icon dz-wishicon">
                         <i class="icon feather icon-heart dz-heart"></i>
                         <i class="icon feather icon-heart-on dz-heart-fill"></i>
-                      </div>
+                      </div> -->
                       <div class="btn btn-primary meta-icon dz-carticon">
                         <i class="flaticon flaticon-basket"></i>
                         <i class="flaticon flaticon-basket-on dz-heart-fill"></i>
@@ -579,7 +567,7 @@
                     </div>								
                   </div>
                   <div class="dz-content">
-                    <h5 class="title"><a href="shop-list.html">Vintage Denim Overalls Shorts</a></h5>
+                    <h5 class="title"><a (click)="global.setRoute('detail-product')">Vintage Denim Overalls Shorts</a></h5>
                     <h5 class="price">$80</h5>
                   </div>
                   <div class="product-tag">
@@ -594,12 +582,12 @@
                     <div class="shop-meta">
                       <a href="javascript:void(0);" class="btn btn-secondary btn-md btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-eye d-md-none d-block"></i>
-                        <span class="d-md-block d-none">Quick View</span>
+                        <span class="d-md-block d-none">Ver detalles</span>
                       </a>
-                      <div class="btn btn-primary meta-icon dz-wishicon">
+                      <!-- <div class="btn btn-primary meta-icon dz-wishicon">
                         <i class="icon feather icon-heart dz-heart"></i>
                         <i class="icon feather icon-heart-on dz-heart-fill"></i>
-                      </div>
+                      </div> -->
                       <div class="btn btn-primary meta-icon dz-carticon">
                         <i class="flaticon flaticon-basket"></i>
                         <i class="flaticon flaticon-basket-on dz-heart-fill"></i>
@@ -607,7 +595,7 @@
                     </div>								
                   </div>
                   <div class="dz-content">
-                    <h5 class="title"><a href="shop-list.html">Satin Wrap Party Blouse</a></h5>
+                    <h5 class="title"><a (click)="global.setRoute('detail-product')">Satin Wrap Party Blouse</a></h5>
                     <h5 class="price">$80</h5>
                   </div>
                   <div class="product-tag">
@@ -622,12 +610,12 @@
                     <div class="shop-meta">
                       <a href="javascript:void(0);" class="btn btn-secondary btn-md btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-eye d-md-none d-block"></i>
-                        <span class="d-md-block d-none">Quick View</span>
+                        <span class="d-md-block d-none">Ver detalles</span>
                       </a>
-                      <div class="btn btn-primary meta-icon dz-wishicon">
+                      <!-- <div class="btn btn-primary meta-icon dz-wishicon">
                         <i class="icon feather icon-heart dz-heart"></i>
                         <i class="icon feather icon-heart-on dz-heart-fill"></i>
-                      </div>
+                      </div> -->
                       <div class="btn btn-primary meta-icon dz-carticon">
                         <i class="flaticon flaticon-basket"></i>
                         <i class="flaticon flaticon-basket-on dz-heart-fill"></i>
@@ -635,7 +623,7 @@
                     </div>									
                   </div>
                   <div class="dz-content">
-                    <h5 class="title"><a href="shop-list.html">Plaid Wool Winter Coat</a></h5>
+                    <h5 class="title"><a (click)="global.setRoute('detail-product')">Plaid Wool Winter Coat</a></h5>
                     <h5 class="price">$80</h5>
                   </div>
                   <div class="product-tag">
@@ -650,12 +638,12 @@
                     <div class="shop-meta">
                       <a href="javascript:void(0);" class="btn btn-secondary btn-md btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-eye d-md-none d-block"></i>
-                        <span class="d-md-block d-none">Quick View</span>
+                        <span class="d-md-block d-none">Ver detalles</span>
                       </a>
-                      <div class="btn btn-primary meta-icon dz-wishicon">
+                      <!-- <div class="btn btn-primary meta-icon dz-wishicon">
                         <i class="icon feather icon-heart dz-heart"></i>
                         <i class="icon feather icon-heart-on dz-heart-fill"></i>
-                      </div>
+                      </div> -->
                       <div class="btn btn-primary meta-icon dz-carticon">
                         <i class="flaticon flaticon-basket"></i>
                         <i class="flaticon flaticon-basket-on dz-heart-fill"></i>
@@ -663,7 +651,7 @@
                     </div>								
                   </div>
                   <div class="dz-content">
-                    <h5 class="title"><a href="shop-list.html">Water-Resistant Windbreaker Jacket</a></h5>
+                    <h5 class="title"><a (click)="global.setRoute('detail-product')">Water-Resistant Windbreaker Jacket</a></h5>
                     <h5 class="price">$80</h5>
                   </div>
                   <div class="product-tag">
@@ -687,7 +675,7 @@
                 <div class="sale-box">
                   <div class="badge style-1 mb-1">Sale Up to 50% Off</div>	
                   <h2 class="sale-name">Summer<span>2024</span></h2>
-                  <a href="shop-list.html" class="btn btn-outline-secondary btn-lg text-uppercase">Shop Now</a>
+                  <a (click)="global.setRoute('detail-product')" class="btn btn-outline-secondary btn-lg text-uppercase">Shop Now</a>
                 </div>
               </div>
             </div>
@@ -699,7 +687,7 @@
                     <div class="badge style-1 mb-3">Sale Up to 50% Off</div>
                     <h2 class="product-name">New Summer Collection</h2>
                   </div>
-                  <a href="shop-list.html" class="btn btn-secondary btn-lg text-uppercase">Shop Now</a>
+                  <a (click)="global.setRoute('detail-product')" class="btn btn-secondary btn-lg text-uppercase">Shop Now</a>
                 </div>
               </div>
             </div>
@@ -753,7 +741,7 @@
                     <div class="dz-content">
                       <div>
                         <span class="sale-title">up to 79% off</span>
-                        <h6 class="title"><a href="shop-list.html">Cozy Knit Cardigan Sweater</a></h6>
+                        <h6 class="title"><a (click)="global.setRoute('detail-product')">Cozy Knit Cardigan Sweater</a></h6>
                       </div>
                       <h6 class="price">
                         $80
@@ -770,7 +758,7 @@
                     <div class="dz-content">
                       <div>
                         <span class="sale-title">up to 79% off</span>
-                        <h6 class="title"><a href="shop-list.html">Sophisticated Swagger Suit</a></h6>
+                        <h6 class="title"><a (click)="global.setRoute('detail-product')">Sophisticated Swagger Suit</a></h6>
                       </div>
                       <h6 class="price">
                         $80
@@ -787,7 +775,7 @@
                     <div class="dz-content">
                       <div>
                         <span class="sale-title">up to 79% off</span>
-                        <h6 class="title"><a href="shop-list.html">Classic Denim Skinny Jeans</a></h6>
+                        <h6 class="title"><a (click)="global.setRoute('detail-product')">Classic Denim Skinny Jeans</a></h6>
                       </div>
                       <h6 class="price">
                         $80
@@ -817,7 +805,7 @@
                     <div class="dz-content">
                       <div>
                         <span class="sale-title">up to 79% off</span>
-                        <h6 class="title"><a href="shop-list.html">Cozy Knit Cardigan Sweater</a></h6>
+                        <h6 class="title"><a (click)="global.setRoute('detail-product')">Cozy Knit Cardigan Sweater</a></h6>
                       </div>
                       <h6 class="price">
                         $80
@@ -834,7 +822,7 @@
                     <div class="dz-content">
                       <div>
                         <span class="sale-title text-success">Free delivery</span>
-                        <h6 class="title"><a href="shop-list.html">Sophisticated Swagger Suit</a></h6>
+                        <h6 class="title"><a (click)="global.setRoute('detail-product')">Sophisticated Swagger Suit</a></h6>
                       </div>
                       <h6 class="price">
                         $80
@@ -852,7 +840,7 @@
                     <div class="dz-content">
                       <div>
                         <span class="sale-title text-success">Free delivery</span>
-                        <h6 class="title"><a href="shop-list.html">Classic Denim Skinny Jeans</a></h6>
+                        <h6 class="title"><a (click)="global.setRoute('detail-product')">Classic Denim Skinny Jeans</a></h6>
                       </div>
                       <h6 class="price">
                         $80
@@ -869,7 +857,7 @@
                     <div class="dz-content">
                       <div>
                         <span class="sale-title">up to 79% off</span>
-                        <h6 class="title"><a href="shop-list.html">Athletic Mesh Sports Leggings</a></h6>
+                        <h6 class="title"><a (click)="global.setRoute('detail-product')">Athletic Mesh Sports Leggings</a></h6>
                       </div>
                       <h6 class="price">
                         $80
@@ -887,7 +875,7 @@
                   <div class="media-contant">
                     <h2 class="title">Great saving on everyday essentials</h2> 
                     <h5 class="sub-title">Up to 60% off + up to $107 Cashback</h5>
-                    <a href="shop-list.html" class="btn btn-white btn-lg">See All</a>
+                    <a (click)="global.setRoute('detail-product')" class="btn btn-white btn-lg">See All</a>
                   </div>
                   <svg class="title animation-text" viewBox="0 0 1320 300">
                     <text x="0" y="">Great saving</text>
@@ -950,7 +938,7 @@
                       <img src="assets/images/shop/product/medium/3.png" alt="image">
                     </div>
                     <div class="dz-content">
-                      <h5 class="title"><a href="shop-list.html">Cozy Knit Cardigan Sweater</a></h5>
+                      <h5 class="title"><a (click)="global.setRoute('detail-product')">Cozy Knit Cardigan Sweater</a></h5>
                       <span class="sale-title">up to 79% off</span>
                     </div>
                   </div>	
@@ -961,7 +949,7 @@
                       <img src="assets/images/shop/product/medium/4.png" alt="image">
                     </div>
                     <div class="dz-content">
-                      <h5 class="title"><a href="shop-list.html">Sophisticated Swagger Suit</a></h5>
+                      <h5 class="title"><a (click)="global.setRoute('detail-product')">Sophisticated Swagger Suit</a></h5>
                       <span class="sale-title">up to 79% off</span>
                     </div>
                   </div>	
@@ -972,7 +960,7 @@
                       <img src="assets/images/shop/product/medium/5.png" alt="image">
                     </div>
                     <div class="dz-content">
-                      <h5 class="title"><a href="shop-list.html">Classic Denim Skinny Jeans</a></h5>
+                      <h5 class="title"><a (click)="global.setRoute('detail-product')">Classic Denim Skinny Jeans</a></h5>
                       <span class="sale-title">up to 79% off</span>
                     </div>
                   </div>	
@@ -985,7 +973,7 @@
                   <h2 class="title">Discovering the Hottest Nearby Destinations in Your Area</h2>
                   <p class="text-capitalize text-secondary m-0">Up to 60% off + up to $107 Cashback</p>
                 </div>
-                <a href="shop-list.html" class="text-secondary font-14 d-flex align-items-center gap-1 m-b15">See All 
+                <a (click)="global.setRoute('detail-product')" class="text-secondary font-14 d-flex align-items-center gap-1 m-b15">See All 
                   <i class="icon feather icon-chevron-right font-18"></i>
                 </a>			
               </div>
@@ -997,7 +985,7 @@
                         <img src="assets/images/shop/product/medium/3.png" alt="image">
                       </div>
                       <div class="dz-content">
-                        <h5 class="title"><a href="shop-list.html">Cardigan Sweater</a></h5>
+                        <h5 class="title"><a (click)="global.setRoute('detail-product')">Cardigan Sweater</a></h5>
                         <span class="sale-title text-success">up to 79% off</span>
                       </div>
                     </div>
@@ -1008,7 +996,7 @@
                         <img src="assets/images/shop/product/medium/4.png" alt="image">
                       </div>
                       <div class="dz-content">
-                        <h5 class="title"><a href="shop-list.html">Swagger Suit</a></h5>
+                        <h5 class="title"><a (click)="global.setRoute('detail-product')">Swagger Suit</a></h5>
                         <span class="sale-title">up to 79% off</span>
                       </div>
                     </div>
@@ -1019,7 +1007,7 @@
                         <img src="assets/images/shop/product/medium/5.png" alt="image">
                       </div>
                       <div class="dz-content">
-                        <h5 class="title"><a href="shop-list.html">Skinny Jeans</a></h5>
+                        <h5 class="title"><a (click)="global.setRoute('detail-product')">Skinny Jeans</a></h5>
                         <span class="sale-title">up to 79% off</span>
                       </div>
                     </div>
@@ -1030,7 +1018,7 @@
                         <img src="assets/images/shop/product/medium/6.png" alt="image">
                       </div>
                       <div class="dz-content">
-                        <h5 class="title"><a href="shop-list.html">Sports Leggings</a></h5>
+                        <h5 class="title"><a (click)="global.setRoute('detail-product')">Sports Leggings</a></h5>
                         <span class="sale-title">up to 79% off</span>
                       </div>
                     </div>
@@ -1041,7 +1029,7 @@
                         <img src="assets/images/shop/product/medium/3.png" alt="image">
                       </div>
                       <div class="dz-content">
-                        <h5 class="title"><a href="shop-list.html">Cardigan Sweater</a></h5>
+                        <h5 class="title"><a (click)="global.setRoute('detail-product')">Cardigan Sweater</a></h5>
                         <span class="sale-title text-success">up to 79% off</span>
                       </div>
                     </div>
@@ -1052,7 +1040,7 @@
                         <img src="assets/images/shop/product/medium/4.png" alt="image">
                       </div>
                       <div class="dz-content">
-                        <h5 class="title"><a href="shop-list.html">Swagger Suit</a></h5>
+                        <h5 class="title"><a (click)="global.setRoute('detail-product')">Swagger Suit</a></h5>
                         <span class="sale-title">up to 79% off</span>
                       </div>
                     </div>
@@ -1071,7 +1059,7 @@
             <div class="left-content">
               <h2 class="title">Blockbuster deals</h2>
             </div>
-            <a href="shop-list.html" class="text-secondary font-14 d-flex align-items-center gap-1">See all deals 
+            <a (click)="global.setRoute('detail-product')" class="text-secondary font-14 d-flex align-items-center gap-1">See all deals 
               <i class="icon feather icon-chevron-right font-18"></i>
             </a>			
           </div>
@@ -1085,7 +1073,7 @@
                   <div class="dz-content">
                     <div>
                       <span class="sale-title">up to 79% off</span>
-                      <h5 class="title"><a href="shop-list.html">Printed Spread Collar Casual Shirt</a></h5>
+                      <h5 class="title"><a (click)="global.setRoute('detail-product')">Printed Spread Collar Casual Shirt</a></h5>
                     </div>
                     <h6 class="price">
                       $80
@@ -1102,7 +1090,7 @@
                   <div class="dz-content">
                     <div>
                       <span class="sale-title">up to 79% off</span>
-                      <h5 class="title"><a href="shop-list.html">Checkered Slim Collar Casual Shirt</a></h5>
+                      <h5 class="title"><a (click)="global.setRoute('detail-product')">Checkered Slim Collar Casual Shirt</a></h5>
                     </div>
                     <h6 class="price">
                       $80
@@ -1119,7 +1107,7 @@
                   <div class="dz-content">
                     <div>
                       <span class="sale-title">up to 79% off</span>
-                      <h5 class="title"><a href="shop-list.html">Solid Cut Away Collar Casual Shirt</a></h5>
+                      <h5 class="title"><a (click)="global.setRoute('detail-product')">Solid Cut Away Collar Casual Shirt</a></h5>
                     </div>
                     <h6 class="price">
                       $80
@@ -1136,7 +1124,7 @@
                   <div class="dz-content">
                     <div>
                       <span class="sale-title">up to 79% off</span>
-                      <h5 class="title"><a href="shop-list.html">Printed Spread Collar Casual Shirt</a></h5>
+                      <h5 class="title"><a (click)="global.setRoute('detail-product')">Printed Spread Collar Casual Shirt</a></h5>
                     </div>
                     <h6 class="price">
                       $80
@@ -1153,7 +1141,7 @@
                   <div class="dz-content">
                     <div>
                       <span class="sale-title">up to 79% off</span>
-                      <h5 class="title"><a href="shop-list.html">Checkered Spread Collar Casual Shirt</a></h5>
+                      <h5 class="title"><a (click)="global.setRoute('detail-product')">Checkered Spread Collar Casual Shirt</a></h5>
                     </div>
                     <h6 class="price">
                       $80
@@ -1175,7 +1163,7 @@
             <div class="left-content">
               <h2 class="title">Featured offer for you</h2>
             </div>
-            <a href="shop-list.html" class="text-secondary font-14 d-flex align-items-center gap-1">See All 
+            <a (click)="global.setRoute('detail-product')" class="text-secondary font-14 d-flex align-items-center gap-1">See All 
               <i class="icon feather icon-chevron-right font-18"></i>
             </a>			
           </div>
@@ -1190,7 +1178,7 @@
                     <div class="main-content">
                       <span class="offer">20% Off</span>
                       <h2 class="product-name">Luxury Bras</h2>
-                      <a href="shop-list.html" class="btn btn-outline-secondary btn-rounded btn-lg">Collect Now</a>
+                      <a (click)="global.setRoute('detail-product')" class="btn btn-outline-secondary btn-rounded btn-lg">Collect Now</a>
                     </div>
                   </div>
                 </div>
@@ -1202,7 +1190,7 @@
                     <div class="main-content">
                       <span class="offer">Sale Up to 50% Off</span>
                       <h2 class="sub-title1">Summer <span class="year">2024</span></h2>
-                      <a href="shop-list.html" class="btn btn-outline-secondary btn-rounded btn-lg">Collect Now</a>
+                      <a (click)="global.setRoute('detail-product')" class="btn btn-outline-secondary btn-rounded btn-lg">Collect Now</a>
                     </div>
                   </div>
                 </div>
@@ -1214,7 +1202,7 @@
                     <div class="main-content">
                       <span class="offer">20% Off</span>
                       <h2 class="sub-title2">Swimwear<span class="bg-title">Sale</span></h2>
-                      <a href="shop-list.html" class="btn btn-outline-secondary btn-rounded btn-lg">Collect Now</a>
+                      <a (click)="global.setRoute('detail-product')" class="btn btn-outline-secondary btn-rounded btn-lg">Collect Now</a>
                     </div>
                   </div>
                 </div>
@@ -1226,7 +1214,7 @@
                     <div class="main-content">
                       <span class="offer">20% Off</span>
                       <h2 class="product-name">Luxury Bras</h2>
-                      <a href="shop-list.html" class="btn btn-outline-secondary btn-rounded btn-lg">Collect Now</a>
+                      <a (click)="global.setRoute('detail-product')" class="btn btn-outline-secondary btn-rounded btn-lg">Collect Now</a>
                     </div>
                   </div>
                 </div>
@@ -1238,7 +1226,7 @@
                     <div class="main-content">
                       <span class="offer">Sale Up to 50% Off</span>
                       <h2 class="sub-title1">Summer <span class="year">2024</span></h2>
-                      <a href="shop-list.html" class="btn btn-outline-secondary btn-rounded btn-lg">Collect Now</a>
+                      <a (click)="global.setRoute('detail-product')" class="btn btn-outline-secondary btn-rounded btn-lg">Collect Now</a>
                     </div>
                   </div>
                 </div>
@@ -1250,7 +1238,7 @@
                     <div class="main-content">
                       <span class="offer">20% Off</span>
                       <h2 class="sub-title2">Swimwear<span class="bg-title">Sale</span></h2>
-                      <a href="shop-list.html" class="btn btn-outline-secondary btn-rounded btn-lg">Collect Now</a>
+                      <a (click)="global.setRoute('detail-product')" class="btn btn-outline-secondary btn-rounded btn-lg">Collect Now</a>
                     </div>
                   </div>
                 </div>
@@ -1268,7 +1256,7 @@
             <div class="left-content">
               <h2 class="title">Featured now </h2>
             </div>
-            <a href="shop-list.html" class="text-secondary font-14 d-flex align-items-center gap-1">See All 
+            <a (click)="global.setRoute('detail-product')" class="text-secondary font-14 d-flex align-items-center gap-1">See All 
               <i class="icon feather icon-chevron-right font-18"></i>
             </a>			
           </div>
@@ -1281,7 +1269,7 @@
                   </div>
                   <div class="dz-content">
                     <div>
-                      <h6 class="title"><a href="shop-list.html">Cozy Knit Cardigan Sweater</a></h6>
+                      <h6 class="title"><a (click)="global.setRoute('detail-product')">Cozy Knit Cardigan Sweater</a></h6>
                       <span class="sale-title">Up to 40% Off</span>
                     </div>
                     <div class="d-flex align-items-center"> 
@@ -1298,7 +1286,7 @@
                   </div>
                   <div class="dz-content">
                     <div>
-                      <h6 class="title"><a href="shop-list.html">Sophisticated Swagger Suit</a></h6>
+                      <h6 class="title"><a (click)="global.setRoute('detail-product')">Sophisticated Swagger Suit</a></h6>
                       <span class="sale-title">Up to 40% Off</span>
                     </div>
                     <div class="d-flex align-items-center"> 
@@ -1315,7 +1303,7 @@
                   </div>
                   <div class="dz-content">
                     <div>
-                      <h6 class="title"><a href="shop-list.html">Classic Denim Skinny Jeans</a></h6>
+                      <h6 class="title"><a (click)="global.setRoute('detail-product')">Classic Denim Skinny Jeans</a></h6>
                       <span class="sale-title">Up to 40% Off</span>
                     </div>
                     <div class="d-flex align-items-center"> 
@@ -1332,7 +1320,7 @@
                   </div>
                   <div class="dz-content">
                     <div>
-                      <h6 class="title"><a href="shop-list.html">Cozy Knit Cardigan Sweater</a></h6>
+                      <h6 class="title"><a (click)="global.setRoute('detail-product')">Cozy Knit Cardigan Sweater</a></h6>
                       <span class="sale-title">Up to 40% Off</span>
                     </div>
                     <div class="d-flex align-items-center"> 
@@ -1349,7 +1337,7 @@
                   </div>
                   <div class="dz-content">
                     <div>
-                      <h6 class="title"><a href="shop-list.html">Sophisticated Swagger Suit</a></h6>
+                      <h6 class="title"><a (click)="global.setRoute('detail-product')">Sophisticated Swagger Suit</a></h6>
                       <span class="sale-title">Up to 40% Off</span>
                     </div>
                     <div class="d-flex align-items-center"> 
@@ -1366,7 +1354,7 @@
                   </div>
                   <div class="dz-content">
                     <div>
-                      <h6 class="title"><a href="shop-list.html">Classic Denim Skinny Jeans</a></h6>
+                      <h6 class="title"><a (click)="global.setRoute('detail-product')">Classic Denim Skinny Jeans</a></h6>
                       <span class="sale-title">Up to 40% Off</span>
                     </div>
                     <div class="d-flex align-items-center"> 
@@ -1392,7 +1380,7 @@
                   <img src="assets/images/about/pic2.jpg" alt="">
                   <div class="media-contant">
                     <h2 class="title">Recent Additions to Your Shortlist</h2> 
-                    <a href="shop-list.html" class="btn btn-white">Shop Now</a>
+                    <a (click)="global.setRoute('detail-product')" class="btn btn-white">Shop Now</a>
                   </div>
                   <svg class="title animation-text" viewBox="0 0 1320 300">
                     <text x="0" y="">Shortlist</text>
@@ -1410,7 +1398,7 @@
                     <div class="dz-content">
                       <div>
                         <span class="sale-title">up to 79% off</span>
-                        <h6 class="title"><a href="shop-list.html">Cozy Knit Cardigan Sweater</a></h6>
+                        <h6 class="title"><a (click)="global.setRoute('detail-product')">Cozy Knit Cardigan Sweater</a></h6>
                       </div>
                       <h6 class="price">
                         $80
@@ -1427,7 +1415,7 @@
                     <div class="dz-content">
                       <div>
                         <span class="sale-title">up to 79% off</span>
-                        <h6 class="title"><a href="shop-list.html">Sophisticated Swagger Suit</a></h6>
+                        <h6 class="title"><a (click)="global.setRoute('detail-product')">Sophisticated Swagger Suit</a></h6>
                       </div>
                       <h6 class="price">
                         $80
@@ -1445,7 +1433,7 @@
                     <div class="dz-content">
                       <div>
                         <span class="sale-title">up to 79% off</span>
-                        <h6 class="title"><a href="shop-list.html">Classic Denim Skinny Jeans</a></h6>
+                        <h6 class="title"><a (click)="global.setRoute('detail-product')">Classic Denim Skinny Jeans</a></h6>
                       </div>
                       <h6 class="price">
                         $80
@@ -1462,7 +1450,7 @@
                     <div class="dz-content">
                       <div>
                         <span class="sale-title">up to 79% off</span>
-                        <h6 class="title"><a href="shop-list.html">Athletic Mesh Sports Leggings</a></h6>
+                        <h6 class="title"><a (click)="global.setRoute('detail-product')">Athletic Mesh Sports Leggings</a></h6>
                       </div>
                       <h6 class="price">
                         $80
@@ -1485,7 +1473,7 @@
             <div class="left-content">
               <h2 class="title">Sponsored</h2>
             </div>
-            <a href="shop-list.html" class="text-secondary font-14 d-flex align-items-center gap-1">See All 
+            <a (click)="global.setRoute('detail-product')" class="text-secondary font-14 d-flex align-items-center gap-1">See All 
               <i class="icon feather icon-chevron-right font-18"></i>
             </a>			
           </div>
@@ -1788,7 +1776,7 @@
         <div class="container">
           <h2 class="title wow fadeInUp" data-wow-delay="0.2s">Upgrade your style with our  top-notch collection.</h2>
           <div class="text-center">	
-            <a href="shop-list.html" class="btn btn-secondary btn-lg wow fadeInUp m-b30" data-wow-delay="0.4s">All Collections</a>
+            <a (click)="global.setRoute('detail-product')" class="btn btn-secondary btn-lg wow fadeInUp m-b30" data-wow-delay="0.4s">All Collections</a>
           </div>	
         </div>
         <div class="collection1"><img src="assets/images/collection/1.png" alt=""></div>
