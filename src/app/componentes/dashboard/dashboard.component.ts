@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { GlobalService } from '../../services/global.service';
+import { AuthPocketbaseService } from '../../services/auth-pocketbase.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +11,9 @@ import { GlobalService } from '../../services/global.service';
 })
 export class DashboardComponent {
 constructor(
-  public global: GlobalService
+  public global: GlobalService,
+  public authService: AuthPocketbaseService
 ) {}
+
+
 }

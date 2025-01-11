@@ -44,7 +44,7 @@ export class AppComponent implements AfterViewInit {
     @Inject(PLATFORM_ID) private platformId: Object
   )
     {}
-    /* ngOnInit(): void {
+    ngOnInit(): void {
       this.scriptLoader
       .loadScripts([
        'assets/js/jquery.min.js',
@@ -73,8 +73,8 @@ export class AppComponent implements AfterViewInit {
         console.log('Todos los scripts se han cargado correctamente', data);
       })
       .catch((error) => console.error('Error al cargar los scripts', error));
-  } */
-      ngOnInit(): void {
+  }
+     /*  ngOnInit(): void {
         if (typeof document !== 'undefined') {
             this.scriptLoader
             .loadScripts([
@@ -107,7 +107,7 @@ export class AppComponent implements AfterViewInit {
         } else {
             console.warn('Document no está disponible en este entorno.');
         }
-    }
+    } */
     ngAfterViewInit(): void {
       if (isPlatformBrowser(this.platformId)) {
           // Inicializa Swiper aquí
