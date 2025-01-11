@@ -15,44 +15,44 @@
                 <div class="col-xl-6 col-md-6">
                     <div class="dz-product-detail sticky-top">
                         <div class="swiper-btn-center-lr">
+                            <!-- <div class="swiper product-gallery-swiper2" >
+                                <div class="swiper-wrapper" id="lightgallery" *ngFor="let file of global.previaProducto.files">
+                                    <div class="swiper-slide">
+                                        <div class="dz-media DZoomImage rounded" >
+                                            <a class="mfp-link lg-item"  href="{{file}}" >
+                                                <i class="feather icon-maximize dz-maximize top-right"></i>
+                                            </a>
+                                            <img src="{{file}}" alt="image">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="swiper product-gallery-swiper thumb-swiper-lg swiper-vertical" *ngFor="let file of global.previaProducto.files">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="{{file}}" alt="image">
+                                    </div>
+                                   
+                                </div>
+                            </div> -->
                             <div class="swiper product-gallery-swiper2">
                                 <div class="swiper-wrapper" id="lightgallery">
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide" *ngFor="let file of global.previaProducto?.files">
                                         <div class="dz-media DZoomImage rounded">
-                                            <a class="mfp-link lg-item" href="assets/images/products/lady-1.png" data-src="assets/images/products/lady-1.png">
+                                            <a class="mfp-link lg-item" href="{{file}}">
                                                 <i class="feather icon-maximize dz-maximize top-right"></i>
                                             </a>
-                                            <img src="assets/images/products/lady-1.png" alt="image">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="dz-media DZoomImage rounded">
-                                            <a class="mfp-link lg-item" href="assets/images/products/lady-2.png" data-src="assets/images/products/lady-2.png">
-                                                <i class="feather icon-maximize dz-maximize top-right"></i>
-                                            </a>
-                                            <img src="assets/images/products/lady-2.png" alt="image">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="dz-media DZoomImage rounded">
-                                            <a class="mfp-link lg-item" href="assets/images/products/lady-3.png" data-src="assets/images/products/lady-3.png">
-                                                <i class="feather icon-maximize dz-maximize top-right"></i>
-                                            </a>
-                                            <img src="assets/images/products/lady-3.png" alt="image">
+                                            <img src="{{file}}" alt="image">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="swiper product-gallery-swiper thumb-swiper-lg swiper-vertical">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="assets/images/products/thumb-img/lady-1.png" alt="image">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="assets/images/products/thumb-img/lady-3.png" alt="image">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="assets/images/products/thumb-img/lady-3.png" alt="image">
+                                    <div class="swiper-slide" *ngFor="let file of global.previaProducto?.files">
+                                        <img src="{{file}}" alt="image">
                                     </div>
                                 </div>
                             </div>
@@ -64,8 +64,7 @@
                         <div class="dz-content">
                             <div class="dz-content-footer">
                                 <div class="dz-content-start">
-<!--                                     <span class="badge bg-purple mb-2">SALE 20% Off</span>
- -->                                    <h4 class="title mb-1">{{global.previaProducto.name}}</h4>
+                                    <h4 class="title mb-1">{{global.previaProducto?.name}}</h4>
                                     <div class="review-num">
                                         <!-- <ul class="dz-rating me-2">
                                             <li>
@@ -101,11 +100,10 @@
                                 </div>
                             </div>
                             <p class="para-text">
-                                This comfortable cotton crop-top features the Divi Engine logo on the front expressing how easy “data Divi Engine life” is. It is the perfect tee for any occasion.
-                            </p>
+                                {{global.previaProducto?.description}} </p>
                             <div class="meta-content m-b20">
                                 <span class="price-name">Precio</span>
-                                <span class="price">$125.75 <del>$132.17</del></span>
+                                <span class="price">$ {{global.previaProducto?.price}} <del>$132.17</del></span>
                             </div>
                             <div class="product-num gap-md-2 gap-xl-0">
                                 <div class="btn-quantity light">
@@ -149,7 +147,7 @@
                                 </div> -->
                             </div>
                             <div class="btn-group cart-btn">
-                                <a href="shop-cart.html" class="btn btn-secondary text-uppercase">Agregar al Carrito</a>
+                                <a  class="btn btn-secondary text-uppercase">Agregar al Carrito</a>
                                 <!-- <a href="shop-wishlist.html" class="btn btn-outline-secondary btn-icon">
                                     <i class="icon feather icon-heart"></i>
                                     Add To Wishlist

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 interface Producto {
   id: number;
   name: string;
@@ -15,6 +16,7 @@ export class GlobalService {
   previaProducto= { } as Producto;
   categorias: any[] = [];
   productos: any[] = [];
+  
   constructor() { }
   setRoute(route: string) {
     this.activeRoute = route;
@@ -28,5 +30,8 @@ export class GlobalService {
   }
   getProductos(): any[] {
     return this.productos;
+  }
+  getProductDetails(): Producto {
+    return this.previaProducto;
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { GlobalService } from '../../../services/global.service';
 import { CommonModule } from '@angular/common';
+import { AuthPocketbaseService } from '../../../services/auth-pocketbase.service';
 
 @Component({
   selector: 'app-head',
@@ -18,6 +19,7 @@ export class HeadComponent {
         this.isMenuOpen = !this.isMenuOpen;
     }
 constructor(
-  public global: GlobalService
+  public global: GlobalService,
+  public authService: AuthPocketbaseService
 ){}
 }

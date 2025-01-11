@@ -44,15 +44,15 @@
                 <li><a class="fab fa-linkedin-in" target="_blank" href="https://www.linkedin.com/showcase/3686700/admin/"></a></li>
                 <li><a class="fab fa-instagram" target="_blank" href="https://www.instagram.com/dexignzone/"></a></li>
               </ul>
-            </div>
+            </div> 
           </div>
         
           <!-- EXTRA NAV -->
           <div class="extra-nav">
             <div class="extra-cell">						
               <ul class="header-right">
-                <li class="nav-item login-link">
-                  <a class="nav-link" (click)="global.setRoute('login')" style="cursor: pointer;">
+                <li [hidden] ="authService.isLogin()" class="nav-item login-link" >
+                  <a  class="nav-link" (click)="global.setRoute('login')" style="cursor: pointer;">
                     Ingresas / Registrate
                   </a>
                 </li>

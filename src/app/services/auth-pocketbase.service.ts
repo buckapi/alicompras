@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import PocketBase from 'pocketbase';
 import { Observable, from, tap, map, BehaviorSubject } from 'rxjs';
 import { GlobalService } from './global.service';
 import { UserInterface } from '../interfaces/user-interface';
-
+import { isPlatformBrowser } from '@angular/common';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +14,7 @@ export class AuthPocketbaseService {
   userType$ = this.userTypeSubject.asObservable();
   
   constructor( 
+    @Inject(PLATFORM_ID) private platformId: Object,
     public global: GlobalService
    ) 
   { 
@@ -63,10 +64,17 @@ export class AuthPocketbaseService {
       }
       this.userTypeSubject.next(null);
     }
-  isLogin() {
-    return localStorage.getItem('isLoggedin');
-  }
-
+isLogin() {
+    console.log('Checking login status...');
+    if (isPlatformBrowser(this.platformId)) {
+        const status = localStorage.getItem('isLoggedin');
+        console.log(`Login status: ${status}`);
+        return status;
+    } else {
+        console.error('localStorage is not available.');
+        return null;
+    }
+}
   isAdmin() {
     const userType = localStorage.getItem('type');
     return userType === '"admin"';
