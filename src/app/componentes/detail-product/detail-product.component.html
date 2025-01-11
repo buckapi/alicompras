@@ -38,7 +38,7 @@
                             </div> -->
                             <div class="swiper product-gallery-swiper2">
                                 <div class="swiper-wrapper" id="lightgallery">
-                                    <div class="swiper-slide" *ngFor="let file of global.previaProducto?.files">
+                                    <div class="swiper-slide" *ngFor="let file of global.previaProducto.files">
                                         <div class="dz-media DZoomImage rounded">
                                             <a class="mfp-link lg-item" href="{{file}}">
                                                 <i class="feather icon-maximize dz-maximize top-right"></i>
@@ -51,7 +51,7 @@
                             
                             <div class="swiper product-gallery-swiper thumb-swiper-lg swiper-vertical">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide" *ngFor="let file of global.previaProducto?.files">
+                                    <div class="swiper-slide" *ngFor="let file of global.previaProducto.files">
                                         <img src="{{file}}" alt="image">
                                     </div>
                                 </div>
@@ -64,7 +64,8 @@
                         <div class="dz-content">
                             <div class="dz-content-footer">
                                 <div class="dz-content-start">
-                                    <h4 class="title mb-1">{{global.previaProducto?.name}}</h4>
+<!--                                     <span class="badge bg-purple mb-2">SALE 20% Off</span>
+ -->                                    <h4 class="title mb-1">{{global.previaProducto.name}}</h4>
                                     <div class="review-num">
                                         <!-- <ul class="dz-rating me-2">
                                             <li>
@@ -100,10 +101,10 @@
                                 </div>
                             </div>
                             <p class="para-text">
-                                {{global.previaProducto?.description}} </p>
+                                {{global.previaProducto.description}} </p>
                             <div class="meta-content m-b20">
                                 <span class="price-name">Precio</span>
-                                <span class="price">$ {{global.previaProducto?.price}} <del>$132.17</del></span>
+                                <span class="price">$ {{global.previaProducto.price}} <del>$132.17</del></span>
                             </div>
                             <div class="product-num gap-md-2 gap-xl-0">
                                 <div class="btn-quantity light">
@@ -200,7 +201,7 @@
                             <ul class="d-md-flex d-none align-items-center">
                                 <li class="icon-bx-wraper style-3 me-xl-4 me-2">
                                     <div class="icon-bx">
-                                        <i class="flaticon flaticon-ship"></i>
+                                        <i class="flaticon flaticon-delivery-truck"></i>
                                     </div>
                                     <div class="info-content">
                                         <span>ENVÍO</span>

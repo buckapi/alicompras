@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './componentes/home/home.component';
@@ -15,7 +15,7 @@ import { ScriptLoaderService } from './services/script-loader.service';
 import { ScriptStoreService } from './services/script-store.service';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegisterComponent } from './componentes/register/register.component';
-
+import Swiper from 'swiper';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,
@@ -36,6 +36,28 @@ import { RegisterComponent } from './componentes/register/register.component';
 })
 export class AppComponent implements OnInit {
   title = 'alicompras';
+  ngAfterViewInit(): void {
+    // Inicializa el slider principal
+    const gallerySwiper = new Swiper('.quick-modal-swiper2', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  
+    // Inicializa el slider de miniaturas
+    const thumbSwiper = new Swiper('.thumb-swiper-lg', {
+      slidesPerView: 3,
+      spaceBetween: 10,
+      // Otras configuraciones según sea necesario
+    });
+  }
   constructor (
     public global: GlobalService,
     private scriptLoader: ScriptLoaderService,

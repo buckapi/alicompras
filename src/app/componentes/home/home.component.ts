@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GlobalService } from '../../services/global.service';
 import { RealtimeCategoriasService } from '../../services/realtime-categorias.service';
 import { RealtimeProductosService } from '../../services/realtime-productos.service';
+import Swiper from 'swiper';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,21 @@ import { RealtimeProductosService } from '../../services/realtime-productos.serv
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit { 
+  ngAfterViewInit(): void {
+    new Swiper('.swiper', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
 categorias: any[] = [];
 productos: any[] = [];
   constructor 
