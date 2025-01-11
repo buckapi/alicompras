@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './componentes/home/home.component';
@@ -34,30 +34,9 @@ import Swiper from 'swiper';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements AfterViewInit {
   title = 'alicompras';
-  ngAfterViewInit(): void {
-    // Inicializa el slider principal
-    const gallerySwiper = new Swiper('.quick-modal-swiper2', {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
   
-    // Inicializa el slider de miniaturas
-    const thumbSwiper = new Swiper('.thumb-swiper-lg', {
-      slidesPerView: 3,
-      spaceBetween: 10,
-      // Otras configuraciones según sea necesario
-    });
-  }
   constructor (
     public global: GlobalService,
     private scriptLoader: ScriptLoaderService,
@@ -129,6 +108,20 @@ export class AppComponent implements OnInit {
             console.warn('Document no está disponible en este entorno.');
         }
     }
+    ngAfterViewInit(): void {
+      if (isPlatformBrowser(this.platformId)) {
+          // Inicializa Swiper aquí
+          new Swiper('.swiper', {
+              // Configuración de Swiper
+          });
+
+          // Acceso a localStorage
+          const isLoggedIn = localStorage.getItem('isLoggedin');
+          // Lógica adicional
+      } else {
+          console.error('localStorage o document no están disponibles en este entorno.');
+      }
+  }
   
       
     isImage(image: string): boolean {

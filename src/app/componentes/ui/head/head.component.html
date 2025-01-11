@@ -228,11 +228,11 @@
                   <span class="badge badge-light">5</span>
                 </button>
               </li>
-              <li class="nav-item" role="presentation">
+              <!-- <li class="nav-item" role="presentation">
                 <button class="nav-link" id="wishlist" data-bs-toggle="tab" data-bs-target="#wishlist-pane" type="button" role="tab" aria-controls="wishlist-pane" aria-selected="false">Wishlist
                   <span class="badge badge-light">2</span>
                 </button>
-              </li>
+              </li> -->
             </ul>
             <div class="tab-content pt-4" id="dz-shopcart-sidebar">
               <div class="tab-pane fade show active" id="shopping-cart-pane" role="tabpanel" aria-labelledby="shopping-cart" tabindex="0">
@@ -303,19 +303,19 @@
                   <div class="mt-auto">
                     <div class="shipping-time">													
                       <div class="dz-icon">
-                        <i class="flaticon flaticon-ship"></i>
+                        <i class="flaticon flaticon-delivery-truck"></i>
                       </div>
                       <div class="shipping-content">
-                        <h6 class="title pe-4">Congratulations , you've got free shipping!</h6>
+                        <h6 class="title pe-4">Felicitaciones, usted tiene envío gratis!</h6>
                         <div class="progress">
-                          <div class="progress-bar progress-animated border-0" style="width: 75%;" role="progressbar">
-                            <span class="sr-only">75% Complete</span>
+                          <div class="progress-bar progress-animated border-0" style="width: 100%;" role="progressbar">
+                            <span class="sr-only">100% Completado</span>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <a href="shop-checkout.html" class="btn btn-outline-secondary btn-block m-b20">Checkout</a>	
-                    <a href="shop-cart.html" class="btn btn-secondary btn-block">View Cart</a>	
+                    <a click="global.setRoute('checkout')" class="btn btn-outline-secondary btn-block m-b20">Checkout</a>	
+                    <a (click)="global.setRoute('cart')" class="btn btn-secondary btn-block">Ver Carrito</a>	
                   </div>	
                 </div>	
               </div>
