@@ -26,13 +26,13 @@
             <div class="logo-header logo-dark">
                   <a (click)="global.setRoute('home')"><img src="assets/images/logo.png" alt=""></a>
               </div>
-              <button class="btn-close" type="button" data-bs-dismiss="collapse" aria-label="Close" (click)="toggleMenu()" *ngIf="showMenu">
+              <!-- <button class="btn-close" type="button" data-bs-dismiss="collapse" aria-label="Close" (click)="toggleMenu()" *ngIf="showMenu">
                 &times;
-            </button>
+            </button> -->
             <ul class="nav navbar-nav">
               <li class="has-mega-menu sub-menu-down auto-width menu-left" (click)="global.setRoute('home')" style="cursor: pointer;"><a>Inicio</a> </li>
               <li class="has-mega-menu sub-menu-down auto-width menu-left" (click)="global.setRoute('about')" style="cursor: pointer;"><a>Nosotros</a></li>
-              <li class="has-mega-menu sub-menu-down auto-width menu-left" (click)="global.setRoute('detail-product')" style="cursor: pointer;"><a>Productos</a></li>
+              <!-- <li class="has-mega-menu sub-menu-down auto-width menu-left" (click)="global.setRoute('detail-product')" style="cursor: pointer;"><a>Productos</a></li> -->
               <li class="has-mega-menu sub-menu-down auto-width menu-left" (click)="global.setRoute('shop')" style="cursor: pointer;"><a>Tienda</a></li>
               <li class="has-mega-menu sub-menu-down auto-width menu-left" (click)="global.setRoute('contact')" style="cursor: pointer;"><a>Contacto</a></li>
               
@@ -52,7 +52,7 @@
             <div class="extra-cell">						
               <ul class="header-right">
                 <li class="nav-item login-link">
-                  <a class="nav-link" href="login.html">
+                  <a class="nav-link" (click)="global.setRoute('login')" style="cursor: pointer;">
                     Ingresas / Registrate
                   </a>
                 </li>

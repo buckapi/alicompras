@@ -3,10 +3,13 @@
 
   <app-head></app-head>
   <app-home [hidden]="global.activeRoute!='home'"></app-home>
+  <app-dashboard [hidden]="global.activeRoute!='dashboard'"></app-dashboard>
   <app-detail-product [hidden]="global.activeRoute!='detail-product'"></app-detail-product>
   <app-shop [hidden]="global.activeRoute!='shop'"></app-shop>
   <app-contact [hidden]="global.activeRoute!='contact'"></app-contact>
   <app-about [hidden]="global.activeRoute!='about'"></app-about>
+  <app-login [hidden]="global.activeRoute!='login'"></app-login>
+  <app-register [hidden]="global.activeRoute!='register'"></app-register>
   <app-footer></app-footer>
 
 <button class="scroltop" type="button"><i class="fas fa-arrow-up"></i></button>
@@ -25,15 +28,19 @@
               <div class="swiper-btn-center-lr">
                 <div class="swiper quick-modal-swiper2">
                   <div class="swiper-wrapper" id="lightgallery">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide"
+                     *ngFor="let file of global.previaProducto.files"
+                     >
                       <div class="dz-media DZoomImage">
-                        <a class="mfp-link lg-item" href="assets/images/products/lady-1.png" data-src="assets/images/products/lady-1.png">
+                        <a class="mfp-link lg-item" href="{{file}}" 
+                        data-src="{file}"
+                        >
                           <i class="feather icon-maximize dz-maximize top-right"></i>
                         </a>
-                        <img src="assets/images/products/lady-1.png" alt="image">
+                        <img src="{{file}}" alt="image">
                       </div>
                     </div>
-                    <div class="swiper-slide">
+                    <!-- <div class="swiper-slide">
                       <div class="dz-media DZoomImage">
                         <a class="mfp-link lg-item" href="assets/images/products/lady-2.png" data-src="assets/images/products/lady-2.png">
                           <i class="feather icon-maximize dz-maximize top-right"></i>
@@ -48,19 +55,13 @@
                         </a>
                         <img src="assets/images/products/lady-3.png" alt="image">
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <div class="swiper quick-modal-swiper thumb-swiper-lg thumb-sm swiper-vertical">
                   <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img src="assets/images/products/thumb-img/lady-1.png" alt="image">
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/images/products/thumb-img/lady-2.png" alt="image">
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/images/products/thumb-img/lady-3.png" alt="image">
+                    <div class="swiper-slide"  *ngFor="let file of global.previaProducto.files">
+                      <img src="{{file}}" alt="image">
                     </div>
                   </div>
                 </div>
@@ -72,8 +73,8 @@
               <div class="dz-content">
                 <div class="dz-content-footer">
                   <div class="dz-content-start">
-                    <span class="badge bg-secondary mb-2">SALE 20% Off</span>
-                    <h4 class="title mb-1"><a href="shop-list.html">Cozy Knit Cardigan Sweater</a></h4>
+                    <span class="badge bg-secondary mb-2">SALE 20% Ds</span>
+                    <h4 class="title mb-1"><a>{{global.previaProducto.name}}</a></h4>
                     <div class="review-num">
                       <ul class="dz-rating me-2">
                         <li class="star-fill">
