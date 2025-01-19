@@ -43,7 +43,7 @@
                                 </ul>
                                 <div class="nav-title bg-light">Ajustes</div>
                                 <ul class="account-info-list">
-                                    <li><a href="#categoryModal" data-bs-toggle="modal">Categorias {{global.categorias.length}}</a></li>
+                                    <li><a href="#categoryModal" data-bs-toggle="modal">Categorias <span>{{global.categorias.length}}</span> </a> </li>
                                     
                                 </ul>
                             </div>
@@ -135,6 +135,69 @@
                     </div> 
                     
                 </section>
+                <div class="modal quick-view-modal fade" id="categoryAdd" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                          <i class="icon feather icon-x"></i>
+                        </button>
+                        <div class="modal-body" *ngFor="let categoria of (realtimecategorias.categorias$ | async)">
+                          <div class="row g-xl-4 g-3">
+                            <div class="col-xl-6 col-md-6">
+                              <div class="dz-product-detail mb-0">
+                                <div class="swiper-btn-center-lr">
+                                 
+                                
+                                  <div class="swiper quick-modal-swiper2">
+                                    <div class="swiper-wrapper" id="lightgallery">
+                                      <div class="swiper-slide">
+                                        <div class="dz-media DZoomImage">
+                                         <!--  <a class="mfp-link lg-item">
+                                            <i class="feather icon-maximize dz-maximize top-right"></i>
+                                          </a> -->
+                                          <img src="{{categoria.images[0]}}" alt="image" *ngIf="categoria.images.length > 0" alt="image">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                  <!-- <div class="swiper quick-modal-swiper thumb-swiper-lg thumb-sm swiper-vertical">
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                        <img src="{{categoria.images[0]}}" alt="image" *ngIf="categoria.images.length > 0" alt="image">
+                                    </div>
+                                    </div>
+                                  </div> -->
+                                </div>	
+                              </div>	
+                            </div>
+                            <div class="col-xl-6 col-md-6">
+                              <div class="dz-product-detail style-2 ps-xl-3 ps-0 pt-2 mb-0">
+                                <div class="dz-content">
+                                  <div class="dz-content-footer">
+                                    <div class="dz-content-start">
+                                      <span class="badge bg-secondary mb-2">Categorias</span>
+                                      <h4 class="title mb-1"><a>{{categoria.name}}</a></h4>
+                                     
+                                    </div>
+                                  </div>
+                                  <div class=" cart-btn">
+                                    <a class="btn btn-secondary text-uppercase">
+                                      <i class="icon feather icon-edit"></i> 
+                                        Editar</a>
+                                    <a  class="btn btn-md btn-outline-secondary btn-icon">
+                                      <i class="icon feather icon-trash-2"></i>
+                                      <span>Borrar</span>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 <div class="modal quick-view-modal fade" id="categoryModal" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                       <div class="modal-content">
