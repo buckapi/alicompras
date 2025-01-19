@@ -16,6 +16,7 @@ export class GlobalService {
   previaProducto= { } as Producto;
   categorias: any[] = [];
   productos: any[] = [];
+  totalProductos = 0;
   
   constructor() { }
   setRoute(route: string) {
@@ -30,6 +31,9 @@ export class GlobalService {
   }
   getProductos(): any[] {
     return this.productos;
+  }
+  getProductosCount(): number {
+    return this.productos.length;
   }
   getProductDetails(): Producto {
     return this.previaProducto;
