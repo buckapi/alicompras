@@ -137,17 +137,9 @@
                                 </div>
                                 
                                 <div class="widget widget_categories">
-                                    <h6 class="widget-title">Category</h6>
-                                    <ul>
-                                        <li class="cat-item cat-item-26"><a href="blog-category.html">Dresses</a> (10)</li>
-                                        <li class="cat-item cat-item-36"><a href="blog-category.html">Top &amp; Blouses</a> (5)</li>
-                                        <li class="cat-item cat-item-43"><a href="blog-category.html">Boots</a> (17)</li>
-                                        <li class="cat-item cat-item-27"><a href="blog-category.html">Jewelry</a> (13)</li>
-                                        <li class="cat-item cat-item-40"><a href="blog-category.html">Makeup</a> (06)</li> 
-                                        <li class="cat-item cat-item-40"><a href="blog-category.html">Fragrances</a> (17)</li> 
-                                        <li class="cat-item cat-item-40"><a href="blog-category.html">Shaving &amp; Grooming</a> (13)</li> 
-                                        <li class="cat-item cat-item-43"><a href="blog-category.html">Jacket</a> (06)</li> 
-                                        <li class="cat-item cat-item-36"><a href="blog-category.html">Coat</a> (22)</li> 
+                                    <h6 class="widget-title">Categoria</h6>
+                                    <ul *ngFor="let categoria of (realtimecategorias.categorias$ | async)" >
+                                        <li class="cat-item cat-item-26"><a >{{categoria.name}}</a> (10)</li>
                                     </ul>
                                 </div>
                                 
@@ -172,23 +164,13 @@
                 <div class="col-80 col-xl-9">
                     <div class="filter-wrapper">
                         <div class="filter-left-area">								
-                            <ul class="filter-tag" *ngFor="let categoria of (realtimecategorias.categorias$ | async)" >
+                           <!--  <ul class="filter-tag" >
                                 <li>
                                     <a href="javascript:void(0);" class="tag-btn">{{categoria.name}} 
                                         <i class="icon feather icon-x tag-close"></i>
                                     </a>
                                 </li>
-                                <!-- <li>
-                                    <a href="javascript:void(0);" class="tag-btn">Tops
-                                        <i class="icon feather icon-x tag-close"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="tag-btn">Outerwear 
-                                        <i class="icon feather icon-x tag-close"></i>
-                                    </a>
-                                </li> -->
-                            </ul>
+                            </ul> -->
                             <span>Paginas 1–5 Of 50 Resultados</span>
                         </div>
                         <div class="filter-right-area">
@@ -196,26 +178,7 @@
                                 <svg class="me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="20" height="20"><g id="Layer_28" data-name="Layer 28"><path d="M2.54,5H15v.5A1.5,1.5,0,0,0,16.5,7h2A1.5,1.5,0,0,0,20,5.5V5h2.33a.5.5,0,0,0,0-1H20V3.5A1.5,1.5,0,0,0,18.5,2h-2A1.5,1.5,0,0,0,15,3.5V4H2.54a.5.5,0,0,0,0,1ZM16,3.5a.5.5,0,0,1,.5-.5h2a.5.5,0,0,1,.5.5v2a.5.5,0,0,1-.5.5h-2a.5.5,0,0,1-.5-.5Z"></path><path d="M22.4,20H18v-.5A1.5,1.5,0,0,0,16.5,18h-2A1.5,1.5,0,0,0,13,19.5V20H2.55a.5.5,0,0,0,0,1H13v.5A1.5,1.5,0,0,0,14.5,23h2A1.5,1.5,0,0,0,18,21.5V21h4.4a.5.5,0,0,0,0-1ZM17,21.5a.5.5,0,0,1-.5.5h-2a.5.5,0,0,1-.5-.5v-2a.5.5,0,0,1,.5-.5h2a.5.5,0,0,1,.5.5Z"></path><path d="M8.5,15h2A1.5,1.5,0,0,0,12,13.5V13H22.45a.5.5,0,1,0,0-1H12v-.5A1.5,1.5,0,0,0,10.5,10h-2A1.5,1.5,0,0,0,7,11.5V12H2.6a.5.5,0,1,0,0,1H7v.5A1.5,1.5,0,0,0,8.5,15ZM8,11.5a.5.5,0,0,1,.5-.5h2a.5.5,0,0,1,.5.5v2a.5.5,0,0,1-.5.5h-2a.5.5,0,0,1-.5-.5Z"></path></g></svg>
                                 Filtros
                             </a>
-                            <div class="form-group">
-                                <select class="default-select">
-                                    <option>Latest</option>
-                                    <option>Popularity</option>
-                                    <option>Average rating</option>
-                                    <option>Latest</option>
-                                    <option>Low to high</option>
-                                    <option>high to Low</option>
-                                </select>
-                            </div>
-                            <div class="form-group Category">
-                                <select class="default-select">
-                                    <option>Products</option>
-                                    <option>9 Products</option>
-                                    <option>12 Products</option>
-                                    <option>14 Products</option>
-                                    <option>18 Products</option>
-                                    <option>24 Products</option>
-                                </select>
-                            </div>
+                           
                             <div class="shop-tab">
                                 <ul class="nav" role="tablist" id="dz-shop-tab">
                                     <li class="nav-item" role="presentation">
@@ -386,11 +349,15 @@
                                                         <i class="fa-solid fa-eye d-md-none d-block"></i>
                                                         <span class="d-md-block d-none">Ver producto</span>
                                                     </a>
-                                                   <!--  <div class="btn btn-primary meta-icon dz-wishicon">
-                                                        <i class="icon feather icon-heart dz-heart"></i>
-                                                        <i class="icon feather icon-heart-on dz-heart-fill"></i>
-                                                    </div> -->
-                                                    <div class="btn btn-primary meta-icon dz-carticon">
+                                                    <div class="btn btn-primary meta-icon dz-wishicon" *ngIf="authService.isAdmin()">
+                                                        <i class="icon feather icon-edit dz-edit"></i>
+                                                        <i class="icon feather icon-edit-on dz-edit-fill"></i>
+                                                    </div>
+                                                    <div class="btn btn-primary meta-icon dz-wishicon" *ngIf="authService.isAdmin()">
+                                                        <i class="icon feather icon-trash dz-trash"></i>
+                                                        <i class="icon feather icon-trash-on dz-trash-fill"></i>
+                                                    </div>
+                                                    <div class="btn btn-primary meta-icon dz-carticon" *ngIf="!authService.isAdmin()">
                                                         <i class="flaticon flaticon-basket"></i>
                                                         <i class="flaticon flaticon-shopping-basket-on dz-heart-fill"></i>
                                                     </div>

@@ -15,12 +15,16 @@ import { ScriptLoaderService } from './services/script-loader.service';
 import { ScriptStoreService } from './services/script-store.service';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegisterComponent } from './componentes/register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 import Swiper from 'swiper';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,
+  standalone: true,
+  imports: [
+    CommonModule,  // Necesario para las directivas como ngIf y ngFor
+    HttpClientModule,
+    RouterOutlet,
     DashboardComponent,
-    CommonModule,
     HomeComponent, 
     FooterComponent,
     HeadComponent,
@@ -30,6 +34,7 @@ import Swiper from 'swiper';
     AboutComponent,
     LoginComponent,
     RegisterComponent
+  
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

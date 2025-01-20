@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { GlobalService } from '../../services/global.service';
 import { RealtimeCategoriasService } from '../../services/realtime-categorias.service';
 import { RealtimeProductosService } from '../../services/realtime-productos.service';
+import { AuthPocketbaseService } from '../../services/auth-pocketbase.service';
 
 @Component({
   selector: 'app-shop',
@@ -16,7 +17,8 @@ export class ShopComponent {
 constructor(
   public global: GlobalService,
   public realtimecategorias: RealtimeCategoriasService,
-  public realtimeproductos: RealtimeProductosService
+  public realtimeproductos: RealtimeProductosService,
+  public authService: AuthPocketbaseService
 ) {
   this.realtimecategorias.categorias$.subscribe((categorias) => {
     this.categorias = categorias;
